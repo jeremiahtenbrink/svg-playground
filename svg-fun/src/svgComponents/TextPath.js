@@ -23,7 +23,7 @@ const TextPath = ( { textWidth = 300, fontSize = 32, textOffset = 0, pathWidth =
   } );
   
   const handleChange = ( name, value ) => {
-    debugger;
+    
     const setStateObject = {
       offset: setOffset,
       width: setWidth,

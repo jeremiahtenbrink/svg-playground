@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import SvgTextAnimation from "../svgComponents/SvgTextAnimation.js";
 import TwitterBird from "../svgComponents/TwitterBird.js";
+import YouTubeIcon from "../svgComponents/YouTubeIcon.js";
+import SVGLetterMorph from "../svgComponents/SVGLetterMorph.js";
+import SunRainCloud from "../svgComponents/SunRainCloud.js";
+import AnimateAlongPath from "../svgComponents/AnimateAlongPath.js";
+import DownloadCloud from "../svgComponents/DownloadCloud.js";
 
 /**
  *   LandingPage
@@ -12,15 +17,25 @@ import TwitterBird from "../svgComponents/TwitterBird.js";
 const LandingPage = ( props ) => {
   
   return ( <Container>
+    <AnimateAlongPath/>
     <Header className="App-header">
       <SvgTextAnimation/>
-      <TwitterBird/>
+      <IconHolder>
+        <TwitterBird/>
+        <YouTubeIcon/>
+        <SunRainCloud/>
+      </IconHolder>
     </Header>
   </Container> );
 };
+const IconHolder = styled.div`
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+`;
 
 const Header = styled.header`
-border: 1px solid brown;
 display: flex;
 justify-content: center;
 align-self: center;
@@ -29,10 +44,11 @@ flex-direction: column;
 `;
 
 const Container = styled.div`
-width: 100%;
+width: 100vw;
 height: 100vh;
 overflow: hidden;
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 a {

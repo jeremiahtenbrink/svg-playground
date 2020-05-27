@@ -48,7 +48,7 @@ const SvgTextAnimation = ( props ) => {
 const Container = styled.div`
 
 && {
-  margin-top: 7rem;
+  margin-top: 3rem;
   justify-self: center;
   align-self: center;
   
