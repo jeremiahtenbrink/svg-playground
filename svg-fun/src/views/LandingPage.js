@@ -24,6 +24,7 @@ const LandingPage = ( props ) => {
         <TwitterBird/>
         <YouTubeIcon/>
         <SunRainCloud/>
+        <DownloadCloud/>
       </IconHolder>
     </Header>
   </Container> );
