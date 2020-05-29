@@ -66,7 +66,7 @@ const AnimateAlongPath = ( props ) => {
     moveAlongPath();
   }, [ animationInfo ] );
   
-  debugger;
+  
   return (
     <Container onClick={ () => setVisible( !visible ) } visible={ visible }>
       <svg ref={ svgRef } className={ "motion-along-path" } width="1000"

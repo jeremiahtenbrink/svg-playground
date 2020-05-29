@@ -14,13 +14,13 @@ const SVGLetterMorph = ( props ) => {
   const [ morphAnimation, setMorphAnimation ] = useState( null );
   
   const morph = () => {
-    debugger;
+    
     morphAnimation.play();
     
   };
   
   useEffect( () => {
-    debugger;
+    
     const letterMorphAnimation = getMorphAnimation( "#letterMorph",
       SVGLetterMorphArray,
       5000,

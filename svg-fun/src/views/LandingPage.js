@@ -3,10 +3,10 @@ import styled from "styled-components";
 import SvgTextAnimation from "../svgComponents/SvgTextAnimation.js";
 import TwitterBird from "../svgComponents/TwitterBird.js";
 import YouTubeIcon from "../svgComponents/YouTubeIcon.js";
-import SVGLetterMorph from "../svgComponents/SVGLetterMorph.js";
 import SunRainCloud from "../svgComponents/SunRainCloud.js";
 import AnimateAlongPath from "../svgComponents/AnimateAlongPath.js";
-import DownloadCloud from "../svgComponents/DownloadCloud.js";
+import SnapChat from "../svgComponents/SnapChat.js";
+import Calendar from "../svgComponents/Calendar/Calendar.js";
 
 /**
  *   LandingPage
@@ -14,6 +14,9 @@ import DownloadCloud from "../svgComponents/DownloadCloud.js";
  *  @component
  *
  */
+
+const links = [];
+
 const LandingPage = ( props ) => {
   
   return ( <Container>
@@ -24,7 +27,7 @@ const LandingPage = ( props ) => {
         <TwitterBird/>
         <YouTubeIcon/>
         <SunRainCloud/>
-        <DownloadCloud/>
+        <SnapChat/>
       </IconHolder>
     </Header>
   </Container> );

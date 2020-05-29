@@ -7,6 +7,7 @@ import styled from "styled-components";
 import SmilAnimations from "./views/SmilAnimations.js";
 import { withBackground } from "./views/withBackground.js";
 import SvgsAndReact from "./views/SvgsAndReact.js";
+import CalendarView from "./views/CalendarView.js";
 
 const LandingWithBackground = withBackground( LandingPage );
 
@@ -18,6 +19,7 @@ function App(){
       <Route path={ "/svgs-n-react" } component={ SvgsAndReact }/>
       <Route exact path={ "/morph" } component={ Morph }/>
       <Route exact path={ "/smil" } component={ SmilAnimations }/>
+      <Route exact path={ "/calendar" } component={ CalendarView }/>
       <Route exact path={ "/" }
              render={ ( props ) => <LandingWithBackground { ...props } /> }/>
     
@@ -29,6 +31,7 @@ function App(){
 export default App;
 
 const AppContainer = styled.div`
+border: 1px solid red;
 max-width: 100vw;
 max-height: 100vh;
 overflow-y: scroll;
