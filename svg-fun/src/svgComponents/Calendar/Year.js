@@ -11,11 +11,11 @@ import moment from "moment";
 const Year = ( props ) => {
   
   const [ yearsOpen, setYearsOpen ] = useState( false );
-  const year = moment( props.dateSelected ).format( "YYYY" );
+  const year = moment.unix( props.dateSelected ).format( "YYYY" );
   const years = [];
   const [ yearPosition, setYearPosition ] = useState( ( 25 ) );
   const eventListener = useRef();
-  
+  debugger
   for( let i = 0; i < 50; i++ ){
     years.push( year - 25 + i );
   }
@@ -36,10 +36,12 @@ const Year = ( props ) => {
   };
   
   const setYearSelected = ( yearSelected ) => {
-    debugger;
+    if( !yearsOpen ){
+      return;
+    }
     const diff = yearSelected - year;
-    const nextDate = moment( props.dateSelected ).add( diff, "years" );
-    props.setDateSelected( nextDate.unix() );
+    const nextDate = moment.unix( props.dateSelected ).add( diff, "years" );
+    props.setDateSelected( nextDate );
   };
   
   const onMouseLeave = () => {
