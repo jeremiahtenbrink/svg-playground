@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import styled, { keyframes } from "styled-components";
-import { ReactComponent as CalendarSvg } from "../svgs/icons/Calendar.svg";
+import { ReactComponent as CalendarSvg } from "../svgs/Calendar.svg";
 import { useCalender } from "../customHooks/useCalender.js";
 
 /**
@@ -13,7 +13,7 @@ import { useCalender } from "../customHooks/useCalender.js";
 const Calendar = ( props ) => {
   
   const [ selectedDate, setNewTime ] = useCalender( moment( moment.now() )
-    .unix() );
+    .unix(), props.delay || 1000 * 60 );
   const [ dimensions, setDimensions ] = useState( {
     defaultHeight: 231,
     defaultWidth: 211,

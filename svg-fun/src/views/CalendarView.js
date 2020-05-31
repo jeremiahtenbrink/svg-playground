@@ -10,7 +10,7 @@ import Calendar from "../svgComponents/Calendar.js";
  */
 const CalendarView = ( props ) => {
   return ( <CalendarVewContainer className={ "calendar-view-container" }>
-    <Calendar height={ 600 } width={ 600 } bordered/>
+    <Calendar height={ 500 } width={ 500 } delay={ 1 * 1000 }/>
   </CalendarVewContainer> );
 };
 
@@ -21,9 +21,7 @@ min-height: 100vh;
 width: 100%;
 display: flex;
 align-items: center;
-display: flex;
 justify-content: center;
-align-items: center;
 overflow: hidden;
 margin: 0;
 `;

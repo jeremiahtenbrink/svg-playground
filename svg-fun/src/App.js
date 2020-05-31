@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import LandingPage from "./views/LandingPage.js";
 import TextPathView from "./views/TextPathView.js";
@@ -17,14 +17,13 @@ function App( props ){
   
   return ( <AppContainer className="App">
     
-    
     <NavBar history={ history }/>
     <Switch>
       <Route path={ "/text-path" } component={ TextPathView }/>
       <Route path={ "/svgs-n-react" } component={ SvgsAndReact }/>
-      <Route exact path={ "/morph" } component={ Morph }/>
-      <Route exact path={ "/smil" } component={ SmilAnimations }/>
-      <Route exact path={ "/calendar" } component={ CalendarView }/>
+      <Route path={ "/morph" } component={ Morph }/>
+      <Route path={ "/smil" } component={ SmilAnimations }/>
+      <Route path={ "/calendar" } component={ CalendarView }/>
       <Route exact path={ "/" }
              render={ ( props ) => <LandingWithBackground { ...props } /> }/>
     </Switch>

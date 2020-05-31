@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useYearPicker } from "./useYearPicker.js";
 import { useElement } from "./useElement.js";
 
-export const useCalender = ( unixTimeStamp ) => {
+export const useCalender = ( unixTimeStamp, delay ) => {
   
   const [ currentTime, setCurrentTime ] = useState( unixTimeStamp );
   const timeRef = useRef();
@@ -24,7 +24,7 @@ export const useCalender = ( unixTimeStamp ) => {
   }, [ currentTime ] );
   
   useEffect( () => {
-    if( backgroundColorEl ){
+    if( backgroundColorEl && !backgroundElRef.current ){
       backgroundElRef.current = backgroundColorEl;
       backgroundColorEl.setAttribute( "fill", "rgb(41, 41, 41)" );
     }
@@ -49,6 +49,12 @@ export const useCalender = ( unixTimeStamp ) => {
     }
   }, [ unixTimeStamp, currentTime ] );
   
+  /**
+   * Gets a node from the dom and adds it to the nodes array.
+   *
+   * @param {number} i    The row the date el is in.
+   * @param {number} j    The col the date el is in.
+   */
   const getNode = ( i, j ) => {
     
     const el = document.querySelector( `#Number-${ i }${ j }` );
@@ -59,16 +65,20 @@ export const useCalender = ( unixTimeStamp ) => {
     }
   };
   
+  /**
+   * Gets the month next buttons and month text so it can be updated later.
+   */
   const getMonthButtonAndText = () => {
     const monthSelection = document.querySelector( "#monthSelection" );
+    debugger;
     const month = {};
     if( monthSelection ){
       monthSelection.childNodes.forEach( child => {
-        if( child.id.includes( "RightButton" ) ){
+        if( child.id.includes( "ButtonRight" ) ){
           month.rightButton = child;
           child.addEventListener( "click", monthRighButtonClick );
           setMonthButtonClass( child );
-        }else if( child.id.includes( "LeftButton" ) ){
+        }else if( child.id.includes( "ButtonLeft" ) ){
           month.leftButton = child;
           child.addEventListener( "click", monthLefButtonClick );
           setMonthButtonClass( child );
@@ -87,7 +97,9 @@ export const useCalender = ( unixTimeStamp ) => {
   };
   
   /**
+   * Sets the class names for the month selection buttons.
    * @param {HTMLElement} el
+   * @param {string} buttonSide
    */
   const setMonthButtonClass = ( el, buttonSide ) => {
     try{
@@ -107,6 +119,14 @@ export const useCalender = ( unixTimeStamp ) => {
     }
   };
   
+  /**
+   * Creates the moment object and subtracts or adds the amount of time to
+   * change before setting the new unix timestamp as the selected tate.
+   *
+   * @param {string} addOrSubtract
+   * @param {string} unitOfTime
+   * @param {number} amount
+   */
   const changeDate = ( addOrSubtract, unitOfTime, amount ) => {
     if( !timeRef.current ){
       timeRef.current = currentTime;
@@ -123,23 +143,31 @@ export const useCalender = ( unixTimeStamp ) => {
     setCurrentTime( nextTimeStamp );
   };
   
+  /**
+   * called when the right month button is pressed in the dom. Calls change
+   * date with the appropriate parms.
+   * @param {MouseEvent} e
+   */
   const monthRighButtonClick = ( e ) => {
     console.log( "right click" );
     changeDate( "add", "month", 1 );
   };
   
+  /**
+   * called when the left month button is presse in the dom. Calls change
+   * date with the appropiate params.
+   * @param {MouseEvent} e
+   */
   const monthLefButtonClick = ( e ) => {
     console.log( "left click" );
     changeDate( "subtract", "month", 1 );
   };
   
-  const setNewTime = ( unixTimeStamp ) => {
-    if( typeof unixTimeStamp === "moment" ){
-      setCurrentTime( unixTimeStamp.unix() );
-    }
-    setCurrentTime( unixTimeStamp );
-  };
-  
+  /**
+   * Called when the mouse leaves the date element in the calendar.
+   * Sets the opacity of the highlight circle back to 0.
+   *
+   */
   const removeBackgroundOpacity = ( e ) => {
     if( e.target.hasChildNodes() ){
       e.target.childNodes.forEach( child => {
@@ -151,6 +179,11 @@ export const useCalender = ( unixTimeStamp ) => {
     }
   };
   
+  /**
+   * Called when the mouse enters the date element in the calendar.
+   * Sets the opacity of the highlight to 1.
+   *
+   */
   const setBackgroundOpacity = ( e ) => {
     if( e.target.hasChildNodes() ){
       e.target.childNodes.forEach( child => {
@@ -162,6 +195,11 @@ export const useCalender = ( unixTimeStamp ) => {
     }
   };
   
+  /**
+   * called when the date has been clicked. Gets the value of the date that
+   * has been clicked then calculates the amount of time that needs to be
+   * changed before calling change date.
+   */
   const onDateClick = ( e ) => {
     if( fadded.current ){
       return;
@@ -181,7 +219,12 @@ export const useCalender = ( unixTimeStamp ) => {
       }
     }
   };
+  
   /**
+   * recursive function to get the value of the date el that was click on.
+   * If this element doesn't have the value then it looks at its parent
+   * and so on till found or out of nodes.
+   *
    * @param {HTMLElement} el
    */
   const getValueRecursive = ( el ) => {
@@ -197,6 +240,10 @@ export const useCalender = ( unixTimeStamp ) => {
     }
   };
   
+  /**
+   * This function is used to dim the calendar component after a set amount
+   * of time.
+   */
   const checkIfNeedsToFade = () => {
     
     if( shouldBeFadded.current && fadded.current ){
@@ -211,7 +258,7 @@ export const useCalender = ( unixTimeStamp ) => {
       return;
     }
     
-    if( !fadded.current && !shouldBeFadded.current && diff > 5 * 1000 ){
+    if( !fadded.current && !shouldBeFadded.current && diff > delay ){
       shouldBeFadded.current = true;
       backgroundElRef.current.setAttribute( "fill", "url(#paint0_linear)" );
       nodes.forEach( row => {
@@ -225,6 +272,11 @@ export const useCalender = ( unixTimeStamp ) => {
     
   };
   
+  /**
+   * used to determine if there was a click any where el in the dom while the
+   * calendar was set to dim. If there is it will set the calendar back to
+   * bright again.
+   */
   const backgroundClick = ( e ) => {
     shouldBeFadded.current = false;
     e.stopPropagation();
@@ -239,12 +291,20 @@ export const useCalender = ( unixTimeStamp ) => {
     updatedLast.current = moment( moment.now() ).unix();
   };
   
+  /**
+   * gets the date nodes and sets them to the node array or just changes all
+   * the text content of the nodes based on which month it is.
+   * for the nodes in the dom.
+   * @param {boolean} [getNodes]   to tell the function to get the nodes or not
+   */
   const getNodesAndSetCalender = ( getNodes = false ) => {
     if( !timeRef.current ){
       timeRef.current = currentTime;
     }
     const momentDate = moment.unix( currentTime );
     const selectedDate = momentDate.format( "D" );
+    
+    // the dat of the week the month starts on
     let monthStartDay = momentDate.startOf( "month" ).day();
     
     if( month ){
@@ -257,18 +317,29 @@ export const useCalender = ( unixTimeStamp ) => {
     const maxDayLastMonth = lastMonth.endOf( "month" ).format( "D" );
     let finishedWithCurrentMonth = false;
     
+    // double for loop to cycle though the calendar dates.
     for( let i = 0; i < 6; i++ ){
+      
+      // checking to see if the nodes are already populated in the array and
+      // if no then it pushes a "row" into the nodes.
       if( nodes.length !== 6 ){
         nodes.push( [] );
+        
+        // if it pushes a row then it will need to get the nodes
         if( getNodes !== true ){
           getNodes = true;
         }
       }
       
+      // second for loop to go through the columns
       for( let j = 0; j < 7; j++ ){
+        
         if( getNodes ){
           getNode( i, j );
         }
+        
+        // we have not yet reached the day of the month to start on yet.
+        // so we populate the array with dates from last month
         if( monthStartDay > 0 ){
           setNodeText( nodes[ i ][ j ],
             maxDayLastMonth - monthStartDay,
@@ -278,15 +349,25 @@ export const useCalender = ( unixTimeStamp ) => {
           monthStartDay--;
           
         }else{
+          
+          // we have reached the day of the month it starts on so we
+          // populate the array with dates from this month or next month
           if( index > endOfMonth ){
+            
+            // we reached the end of this month and need to start off with
+            // fresh numbers again.
             index = 1;
             finishedWithCurrentMonth = true;
           }
+          
           if( index === parseInt( selectedDate ) && !finishedWithCurrentMonth ){
+            // the selected day
             setNodeText( nodes[ i ][ j ], index, 1, "current", true );
           }else if( finishedWithCurrentMonth ){
+            // dates for next month
             setNodeText( nodes[ i ][ j ], index, .2, "next" );
           }else{
+            // dates for this month
             setNodeText( nodes[ i ][ j ], index, 1 );
           }
           
@@ -299,6 +380,14 @@ export const useCalender = ( unixTimeStamp ) => {
     setNodes( [ ...nodes ] );
   };
   
+  /**
+   * sets the dates text value and background opacity
+   * @param {HTMLElement} node
+   * @param {string} text
+   * @param {number} [opacity]
+   * @param {string} [month]
+   * @param {boolean} [active]
+   */
   const setNodeText = ( node, text, opacity = 1, month = "current",
     active = false ) => {
     try{
@@ -313,10 +402,13 @@ export const useCalender = ( unixTimeStamp ) => {
       
       node.childNodes.forEach( child => {
         if( child.id.includes( "text-" ) ){
+          //text el
           child.firstChild.textContent = text;
           child.firstChild.setAttribute( "opacity", opacity );
         }else if( child.id.includes( "Background" ) ){
+          // background circle
           child.setAttribute( "fill-opacity", 0 );
+          // if the node is the current selected date or not.
           if( active && month === "current" ){
             child.classList.add( "active" );
           }else{
@@ -338,6 +430,6 @@ export const useCalender = ( unixTimeStamp ) => {
     updatedLast.current = moment( moment.now() ).unix();
   };
   
-  return [ currentTime, setNewTime ];
+  return [ currentTime, setCurrentTime ];
   
 };

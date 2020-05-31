@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu } from "antd";
+import { Link } from "react-router-dom";
 
 const { SubMenu } = Menu;
 
@@ -7,43 +8,42 @@ class NavBar extends React.Component{
   
   constructor( props ){
     super( props );
-    console.log( props.history );
-    if( this.props.history.location.pathname === "/calendar" ){
-      this.state = { theme: "dark" };
-    }else{
-      this.state = { theme: "light" };
-    }
+    
+    this.state = {
+      keys: {
+        [ "/calendar" ]: "2",
+        [ "/" ]: "1",
+        [ "/smil" ]: "3",
+        [ "/morph" ]: "4",
+        [ "/svgs-n-react" ]: "5",
+        [ "/text-path" ]: "6",
+      },
+      themeLight: [ "/", "/text-path" ],
+      themeDark: [ "/smil", "/calendar", "/morph", "/svgs-n-react" ],
+    };
     
   }
   
-  componentDidUpdate( prevProps, prevState, snapshot ){
-    if( prevProps.history.location.pathname !==
-      this.props.history.location.pathname ){
-      if( this.props.history.pathname === "/calendar" ){
-        this.setState( { theme: "dark" } );
-      }
-      
-    }
-  }
-  
   handleClick = e => {
-    this.props.history.push( "/calendar" );
+  
   };
   
   render(){
     return ( <Menu
       onClick={ this.handleClick }
       style={ { width: 256 } }
-      defaultSelectedKeys={ [ "1" ] }
+      selectedKeys={ this.state.keys[ this.props.history.location.pathname ] }
       mode="inline"
-      theme={ this.state.theme }
+      theme={ this.state.themeLight.includes( this.props.history.location.pathname ) ?
+        "light" : "dark" }
     >
-      <Menu.Item key="1">Home</Menu.Item>
-      <Menu.Item key="2">Calendar</Menu.Item>
-      <Menu.Item key="3">SMILL</Menu.Item>
-      <Menu.Item key="4">Morph</Menu.Item>
-      <Menu.Item key="5">SVGs N React</Menu.Item>
-      <Menu.Item key="6">Text Path</Menu.Item>
+      <Menu.Item key="1"><Link to={ "/" }>Home</Link></Menu.Item>
+      <Menu.Item key="2"><Link to={ "/calendar" }>Calendar</Link></Menu.Item>
+      <Menu.Item key="3"><Link to={ "/smil" }>SMIL</Link></Menu.Item>
+      <Menu.Item key="4"><Link to={ "/morph" }>Morph</Link></Menu.Item>
+      <Menu.Item key="5"><Link to={ "/svgs-n-react" }>SVGs N
+        React</Link></Menu.Item>
+      <Menu.Item key="6"><Link to={ "/text-path" }>Text Path</Link></Menu.Item>
     
     </Menu> );
   }
