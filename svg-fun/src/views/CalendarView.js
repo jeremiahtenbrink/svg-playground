@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Calendar from "../svgComponents/Calendar/Calendar.js";
+import Calendar from "../svgComponents/Calendar.js";
 
 /**
  *   CalendarView
@@ -10,18 +10,22 @@ import Calendar from "../svgComponents/Calendar/Calendar.js";
  */
 const CalendarView = ( props ) => {
   return ( <CalendarVewContainer className={ "calendar-view-container" }>
-    <Calendar height={ 600 } width={ 500 }/>
-    <Calendar height={ 300 } width={ 250 }/>
-    <Calendar height={ 200 } width={ 200 }/>
+    <Calendar height={ 600 } width={ 600 } bordered/>
   </CalendarVewContainer> );
 };
 
 const CalendarVewContainer = styled.div`
 background: #0f0f0f;
-height: 100vh;
-width: 100vw;
+height: 100%;
+min-height: 100vh;
+width: 100%;
 display: flex;
 align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+margin: 0;
 `;
 
 CalendarView.propTypes = {};

@@ -6,7 +6,7 @@ import YouTubeIcon from "../svgComponents/YouTubeIcon.js";
 import SunRainCloud from "../svgComponents/SunRainCloud.js";
 import AnimateAlongPath from "../svgComponents/AnimateAlongPath.js";
 import SnapChat from "../svgComponents/SnapChat.js";
-import Calendar from "../svgComponents/Calendar/Calendar.js";
+import Calendar from "../svgComponents/Calendar.js";
 
 /**
  *   LandingPage
