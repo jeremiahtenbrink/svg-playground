@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.js": "/SvgTalk/static/js/main.8b67af85.chunk.js",
+    "main.js.map": "/SvgTalk/static/js/main.8b67af85.chunk.js.map",
+    "runtime-main.js": "/SvgTalk/static/js/runtime-main.661072cf.js",
+    "runtime-main.js.map": "/SvgTalk/static/js/runtime-main.661072cf.js.map",
+    "static/css/2.4af70dfe.chunk.css": "/SvgTalk/static/css/2.4af70dfe.chunk.css",
+    "static/js/2.6fe18f7e.chunk.js": "/SvgTalk/static/js/2.6fe18f7e.chunk.js",
+    "static/js/2.6fe18f7e.chunk.js.map": "/SvgTalk/static/js/2.6fe18f7e.chunk.js.map",
+    "index.html": "/SvgTalk/index.html",
+    "precache-manifest.d050c813b221e44e74fe88b14b678d13.js": "/SvgTalk/precache-manifest.d050c813b221e44e74fe88b14b678d13.js",
+    "service-worker.js": "/SvgTalk/service-worker.js",
+    "static/css/2.4af70dfe.chunk.css.map": "/SvgTalk/static/css/2.4af70dfe.chunk.css.map",
+    "static/js/2.6fe18f7e.chunk.js.LICENSE.txt": "/SvgTalk/static/js/2.6fe18f7e.chunk.js.LICENSE.txt",
+    "static/media/Calendar.1c8aa773.svg": "/SvgTalk/static/media/Calendar.1c8aa773.svg",
+    "static/media/CurvedMotion.899c46f2.svg": "/SvgTalk/static/media/CurvedMotion.899c46f2.svg",
+    "static/media/FollowPath.ac024fab.svg": "/SvgTalk/static/media/FollowPath.ac024fab.svg",
+    "static/media/HexSmallMenu.206db507.svg": "/SvgTalk/static/media/HexSmallMenu.206db507.svg",
+    "static/media/JavaScript1.svg": "/SvgTalk/static/media/JavaScript1.b977a793.svg",
+    "static/media/Node.js.95bbd034.svg": "/SvgTalk/static/media/Node.js.95bbd034.svg",
+    "static/media/OctogonPaths.8b636a1d.svg": "/SvgTalk/static/media/OctogonPaths.8b636a1d.svg",
+    "static/media/ReactIcon.svg": "/SvgTalk/static/media/ReactIcon.06ac3eff.svg",
+    "static/media/RollingBall.ad4acdef.svg": "/SvgTalk/static/media/RollingBall.ad4acdef.svg",
+    "static/media/TransformRect.d369c2b6.svg": "/SvgTalk/static/media/TransformRect.d369c2b6.svg",
+    "static/media/infoGraph.afd71d31.svg": "/SvgTalk/static/media/infoGraph.afd71d31.svg",
+    "static/media/infograph2.36da1e31.svg": "/SvgTalk/static/media/infograph2.36da1e31.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.661072cf.js",
+    "static/css/2.4af70dfe.chunk.css",
+    "static/js/2.6fe18f7e.chunk.js",
+    "static/js/main.8b67af85.chunk.js"
+  ]
+}
