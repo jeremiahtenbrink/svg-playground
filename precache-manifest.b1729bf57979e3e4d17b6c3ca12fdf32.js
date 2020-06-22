@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "22b9471d78b354f634d9683fbde862e6",
+    "revision": "b28ea27ef4cac4499f9c7e15c7a05648",
     "url": "/SvgTalk/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SvgTalk/static/js/2.6fe18f7e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "42d80e44f0f59ca96ae1",
-    "url": "/SvgTalk/static/js/main.8b67af85.chunk.js"
+    "revision": "125293daf5009cc5a51b",
+    "url": "/SvgTalk/static/js/main.501df2f4.chunk.js"
   },
   {
     "revision": "1fd59e5f4d610e107322",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1c8aa7732503d1677d32ca36bfe67587",
     "url": "/SvgTalk/static/media/Calendar.1c8aa773.svg"
+  },
+  {
+    "revision": "1b9a46d94049f18e4aa8e14552c91e78",
+    "url": "/SvgTalk/static/media/CircleDotLoader.1b9a46d9.svg"
   },
   {
     "revision": "899c46f27a32b97b44e28ce1b0d436d0",
@@ -60,6 +64,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SvgTalk/static/media/RollingBall.ad4acdef.svg"
   },
   {
+    "revision": "5a089bca84cf7c3cd37dbaf24c638c7e",
+    "url": "/SvgTalk/static/media/SpingLoader.5a089bca.svg"
+  },
+  {
     "revision": "d369c2b6a2797cd5e8fc5864896106dd",
     "url": "/SvgTalk/static/media/TransformRect.d369c2b6.svg"
   },
@@ -70,5 +78,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "36da1e31792cfd7531ed087faa5ebe4d",
     "url": "/SvgTalk/static/media/infograph2.36da1e31.svg"
+  },
+  {
+    "revision": "7d5fd8dd003c81b341c1947b4d125f05",
+    "url": "/SvgTalk/static/media/roundLoaing.7d5fd8dd.svg"
   }
 ]);
