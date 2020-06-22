@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "50cd1ed541f3d19c1257387a54387b92",
+    "revision": "ef5f47bc4e4f15dcd9cc0d1c580b6ceb",
     "url": "/svg-playground/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/svg-playground/static/js/2.a82be847.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6fd4aa6319b63d944089",
-    "url": "/svg-playground/static/js/main.da217f62.chunk.js"
+    "revision": "d2f40dc08e4f14fe47d4",
+    "url": "/svg-playground/static/js/main.687feba1.chunk.js"
   },
   {
     "revision": "8add1f31d716abf96408",

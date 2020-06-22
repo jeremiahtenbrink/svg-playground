@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/svg-playground/static/js/main.da217f62.chunk.js",
-    "main.js.map": "/svg-playground/static/js/main.da217f62.chunk.js.map",
+    "main.js": "/svg-playground/static/js/main.687feba1.chunk.js",
+    "main.js.map": "/svg-playground/static/js/main.687feba1.chunk.js.map",
     "runtime-main.js": "/svg-playground/static/js/runtime-main.7d79d755.js",
     "runtime-main.js.map": "/svg-playground/static/js/runtime-main.7d79d755.js.map",
     "static/css/2.4af70dfe.chunk.css": "/svg-playground/static/css/2.4af70dfe.chunk.css",
     "static/js/2.a82be847.chunk.js": "/svg-playground/static/js/2.a82be847.chunk.js",
     "static/js/2.a82be847.chunk.js.map": "/svg-playground/static/js/2.a82be847.chunk.js.map",
     "index.html": "/svg-playground/index.html",
-    "precache-manifest.9fea8dedfa8782d335c22bd0de405d7c.js": "/svg-playground/precache-manifest.9fea8dedfa8782d335c22bd0de405d7c.js",
+    "precache-manifest.27194f15c9d339287beb09c445df4b6c.js": "/svg-playground/precache-manifest.27194f15c9d339287beb09c445df4b6c.js",
     "service-worker.js": "/svg-playground/service-worker.js",
     "static/css/2.4af70dfe.chunk.css.map": "/svg-playground/static/css/2.4af70dfe.chunk.css.map",
     "static/js/2.a82be847.chunk.js.LICENSE.txt": "/svg-playground/static/js/2.a82be847.chunk.js.LICENSE.txt",
@@ -32,6 +32,6 @@
     "static/js/runtime-main.7d79d755.js",
     "static/css/2.4af70dfe.chunk.css",
     "static/js/2.a82be847.chunk.js",
-    "static/js/main.da217f62.chunk.js"
+    "static/js/main.687feba1.chunk.js"
   ]
 }
