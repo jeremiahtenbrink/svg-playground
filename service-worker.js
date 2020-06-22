@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/SvgTalk/precache-manifest.b1729bf57979e3e4d17b6c3ca12fdf32.js"
+  "/SvgTalk/precache-manifest.cb8c9a733220c70d2dad701891b2f1f6.js"
 );
 
 self.addEventListener('message', (event) => {

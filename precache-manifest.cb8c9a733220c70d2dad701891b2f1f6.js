@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b28ea27ef4cac4499f9c7e15c7a05648",
+    "revision": "d4a6204bdde0b2dfd25356eb91bc82ed",
     "url": "/SvgTalk/index.html"
   },
   {
-    "revision": "e0eb070d3cfdca393df8",
+    "revision": "76967e93be6106aa8f0c",
     "url": "/SvgTalk/static/css/2.4af70dfe.chunk.css"
   },
   {
-    "revision": "e0eb070d3cfdca393df8",
-    "url": "/SvgTalk/static/js/2.6fe18f7e.chunk.js"
+    "revision": "76967e93be6106aa8f0c",
+    "url": "/SvgTalk/static/js/2.1093ab15.chunk.js"
   },
   {
     "revision": "257a726d1e9f7cba4ff4afdd0f022a7d",
-    "url": "/SvgTalk/static/js/2.6fe18f7e.chunk.js.LICENSE.txt"
+    "url": "/SvgTalk/static/js/2.1093ab15.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "125293daf5009cc5a51b",
-    "url": "/SvgTalk/static/js/main.501df2f4.chunk.js"
+    "revision": "bb6ce34e6c013531a0ed",
+    "url": "/SvgTalk/static/js/main.1d8d124d.chunk.js"
   },
   {
     "revision": "1fd59e5f4d610e107322",
