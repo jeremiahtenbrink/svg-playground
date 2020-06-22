@@ -47,6 +47,7 @@ class NavBar extends React.Component{
       <Menu.Item key="5"><Link to={ "/svgs-n-react" }>SVGs N
         React</Link></Menu.Item>
       <Menu.Item key="6"><Link to={ "/text-path" }>Text Path</Link></Menu.Item>
+      <Menu.Item key="6"><Link to={ "/svg-loaders" }>Svg Loaders</Link></Menu.Item>
       <Menu.Item key="7"><Link to={ "/graph" }>Graph</Link></Menu.Item>
       <Menu.Item key="8"><Link to={ "/info-graph" }>Info
         Graph</Link></Menu.Item>
